@@ -18,7 +18,7 @@
 
 @mixin body-colors {
   background: $body-background;
-  color: $text;
+  color: $body-font-color;
 }
 
 @mixin normal-selection {
