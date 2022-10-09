@@ -2440,7 +2440,7 @@ table {
     p {
 
       &.description {
-        color: $text;
+        color: $body-font-color;
         word-wrap: break-word;
       }
     }
@@ -2594,7 +2594,7 @@ table {
     span {
       background: $body-background;
       border-radius: rem-calc(4);
-      color: $text;
+      color: $body-font-color;
       display: inline-block;
       font-size: $small-font-size;
       font-weight: bold;
