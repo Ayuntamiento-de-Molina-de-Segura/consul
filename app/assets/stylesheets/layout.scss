@@ -1375,14 +1375,18 @@ form {
     }
   }
 
+  .read-notification {
+    color: inherit;
+
+    &:hover {
+      color: $link;
+    }
+  }
+
   &:hover {
 
     a {
       text-decoration: none;
-    }
-
-    p:not(.time) {
-      color: $link;
     }
 
     &::before {
