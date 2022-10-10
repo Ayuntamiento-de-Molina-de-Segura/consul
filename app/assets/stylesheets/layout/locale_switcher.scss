@@ -19,8 +19,12 @@
       transform: translateY(-50%);
     }
 
+    label,
+    select {
+      color: inherit;
+    }
+
     label {
-      color: #fff;
       font-size: $tiny-font-size;
       font-weight: normal;
     }
@@ -29,7 +33,6 @@
       background: #001d33;
       border: 0;
       border-radius: rem-calc(4);
-      color: #fff;
       font-size: $small-font-size;
       height: $line-height;
       margin-bottom: 0;

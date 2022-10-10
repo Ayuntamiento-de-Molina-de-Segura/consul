@@ -81,7 +81,7 @@
   }
 
   .supported {
-    color: $text;
+    color: inherit;
     margin-top: rem-calc(12);
   }
 }
@@ -775,13 +775,13 @@
 
   .button {
     background: #eee;
+    color: inherit;
     height: rem-calc(36);
     margin-bottom: 0;
     padding: $line-height / 4;
     width: rem-calc(36);
 
     &::before {
-      color: $text;
       font-family: "icons";
     }
   }
@@ -1470,7 +1470,7 @@
 .zoom-link {
   background: $body-background;
   border-radius: rem-calc(48);
-  color: $text;
+  color: inherit;
   font-size: rem-calc(24);
   font-weight: bold;
   height: rem-calc(48);
@@ -1637,7 +1637,7 @@
     &.answered {
       background: #f4f8ec;
       border: 2px solid #92ba48;
-      color: $text;
+      color: inherit;
       position: relative;
 
       &::after {
