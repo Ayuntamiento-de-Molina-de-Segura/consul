@@ -14,8 +14,9 @@
     $icon-size-with-padding: $icon-size + $padding-right;
     $polygon-size: $icon-size / 2;
     @include background-till-left-of-screen;
-    @include brand-background($brand-secondary);
+    @include brand-secondary-background;
     border: $border-width solid $brand-secondary;
+    border: $border-width solid var(--brand-secondary, $brand-secondary);
     border-bottom-right-radius: rem-calc(12);
     border-top-right-radius: rem-calc(12);
     margin-top: $line-height * 2;
@@ -35,6 +36,14 @@
         to right,
         #{$brand-secondary} 0,
         #{$brand-secondary} calc(100% - #{$icon-size-with-padding} - 1px),
+        #{$body-background} calc(100% - #{$icon-size-with-padding}),
+        #{$body-background} 100%
+      );
+
+      background-image: linear-gradient(
+        to right,
+        var(--brand-secondary, $brand-secondary) 0,
+        var(--brand-secondary, $brand-secondary) calc(100% - #{$icon-size-with-padding} - 1px),
         #{$body-background} calc(100% - #{$icon-size-with-padding}),
         #{$body-background} 100%
       );
@@ -90,7 +99,7 @@
         }
 
         &::before {
-          color: $brand-secondary;
+          @include brand-secondary-color;
           display: block;
           font-size: $icon-size;
           right: $padding-right;

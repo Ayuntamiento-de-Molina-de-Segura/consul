@@ -1,14 +1,14 @@
-@mixin background-with-text-contrast($color) {
+@mixin background-with-text-contrast($color, $invert-selection: false) {
   background-color: $color;
   color: color-pick-contrast($color);
-}
-
-@mixin brand-background($color: $brand, $invert-selection: true) {
-  @include background-with-text-contrast($color);
 
   @if $invert-selection {
     @include inverted-selection;
   }
+}
+
+@mixin brand-background($invert-selection: true) {
+  @include background-with-text-contrast($brand, $invert-selection);
 }
 
 @mixin brand-text {
@@ -36,6 +36,16 @@
     background-color: rgba(color-pick-contrast($brand), 0.99);
     color: $brand;
   }
+}
+
+@mixin brand-secondary-background($invert-selection: true) {
+  @include background-with-text-contrast($brand-secondary, $invert-selection);
+  background: var(--brand-secondary, $brand-secondary);
+}
+
+@mixin brand-secondary-color {
+  color: $brand-secondary;
+  color: var(--brand-secondary, $brand-secondary);
 }
 
 %brand-background {
