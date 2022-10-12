@@ -2462,7 +2462,7 @@ table {
   }
 
   a {
-    color: $link;
+    @include link;
   }
 }
 
