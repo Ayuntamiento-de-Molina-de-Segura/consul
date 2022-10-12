@@ -9,11 +9,23 @@
 
 @mixin brand-background($invert-selection: true) {
   @include background-with-text-contrast($brand, $invert-selection);
+  background-color: var(--brand, $brand);
 }
 
 @mixin brand-text {
   @include normal-selection;
   color: $brand;
+  color: var(--brand, $brand);
+}
+
+@mixin brand-border($position: null, $width: 1px) {
+  @if $position == null {
+    border: $width solid $brand;
+    border: $width solid var(--brand, $brand);
+  } @else {
+    border-#{$position}: $width solid $brand;
+    border-#{$position}: $width solid var(--brand, $brand);
+  }
 }
 
 @mixin body-colors {
@@ -35,6 +47,7 @@
   *::selection {
     background-color: rgba(color-pick-contrast($brand), 0.99);
     color: $brand;
+    color: var(--brand, $brand);
   }
 }
 

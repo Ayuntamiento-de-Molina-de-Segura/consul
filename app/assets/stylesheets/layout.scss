@@ -125,8 +125,7 @@ button,
 
 .button {
   @extend %button;
-  @include inverted-selection;
-  background: $brand;
+  @include brand-background; // TODO: check whether changing the text affects!
 
   &.medium {
     font-size: $small-font-size;
@@ -948,7 +947,7 @@ footer {
 }
 
 .sidebar-title {
-  border-top: 2px solid $brand;
+  @include brand-border(top, 2px);
   display: inline-block;
   font-size: rem-calc(16);
   font-weight: bold;
@@ -968,7 +967,7 @@ footer {
 }
 
 .auth-image {
-  @include background-with-text-contrast($brand);
+  @include brand-background($invert-selection: false);
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -2508,8 +2507,8 @@ table {
   h3 {
 
     &.title {
+      @include brand-border(top, 4px);
       display: inline-block;
-      border-top: 4px solid $brand;
       margin-bottom: 0;
       padding: $line-height / 2 0;
     }

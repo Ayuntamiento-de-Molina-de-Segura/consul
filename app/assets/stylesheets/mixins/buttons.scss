@@ -24,10 +24,21 @@
 }
 
 @mixin hollow-button($color: $brand) {
-  @include button($style: hollow, $background: $color);
+  @include button($style: hollow);
   @include normal-selection;
   @include base-button;
   margin-bottom: 0;
+
+  &,
+  &.disabled,
+  &[disabled],
+  &.disabled:hover,
+  &[disabled]:hover,
+  &.disabled:focus,
+  &[disabled]:focus {
+    border-color: $color;
+    color: $color;
+  }
 }
 
 @mixin link {
