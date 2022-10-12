@@ -61,6 +61,16 @@
   color: var(--brand-secondary, $brand-secondary);
 }
 
+@mixin anchor-color {
+  color: $anchor-color;
+  color: var(--anchor-color, var(--brand, $anchor-color));
+}
+
+@mixin anchor-color-hover {
+  color: $anchor-color-hover;
+  color: var(--anchor-color-hover, $anchor-color-hover);
+}
+
 %brand-background {
   @include brand-background;
 }

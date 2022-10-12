@@ -42,12 +42,17 @@
 }
 
 @mixin link {
-  color: $anchor-color;
+  @include anchor-color;
   cursor: pointer;
 
   &:hover,
+  &:active,
+  &:focus {
+    @include anchor-color-hover;
+  }
+
+  &:hover,
   &:active {
-    color: $anchor-color-hover;
     text-decoration: underline;
   }
 }
@@ -56,7 +61,7 @@
   color: inherit;
 
   &:hover {
-    color: $anchor-color;
+    @include anchor-color;
   }
 }
 

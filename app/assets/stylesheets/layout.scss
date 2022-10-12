@@ -95,10 +95,7 @@ p {
 }
 
 a {
-  &:hover,
-  &:active {
-    text-decoration: underline;
-  }
+  @include link;
 }
 
 a,
@@ -937,8 +934,8 @@ footer {
 
 .categories a,
 .geozone a {
+  @include anchor-color;
   background: $highlight;
-  color: $anchor-color;
 
   &:hover,
   &.is-active {
