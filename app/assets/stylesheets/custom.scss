@@ -2,3 +2,41 @@
 //
 // You can also create SCSS files in the app/assets/stylesheets/custom/
 // folder and they will be loaded automatically.
+
+:root {
+  --brand-secondary: #005a93;
+}
+
+.tenant-public,
+.tenant-village {
+  --brand: #ffa;
+  --brand: #004a83;
+  --brand: #834a00;
+  --brand: #83004a;
+  --brand: #f60;
+  --brand: #350;
+  --brand-secondary: #173a00;
+}
+
+.tenant-village {
+  --anchor-color: #073;
+
+  .public > .wrapper > header {
+    --brand-secondary: $white;
+    --brand: $white;
+
+    .top-bar,
+    label {
+      color: $black;
+    }
+
+    img {
+      filter: invert(1);
+    }
+  }
+}
+
+.tenant-earth {
+  --brand: #83004a;
+  --brand-secondary: #63003a;
+}
