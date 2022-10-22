@@ -696,8 +696,7 @@ body > header,
 }
 
 .top-links {
-  background: $dark;
-  color: color-pick-contrast($dark);
+  @include background-with-text-contrast($dark);
   display: flex;
   flex-wrap: wrap;
   font-size: $small-font-size;
@@ -976,10 +975,9 @@ footer {
 }
 
 .auth-image {
-  background-color: $brand;
+  @include background-with-text-contrast($brand);
   background-repeat: no-repeat;
   background-size: cover;
-  color: color-pick-contrast($brand);
 
   @include breakpoint(medium) {
     min-height: $line-height * 42;
