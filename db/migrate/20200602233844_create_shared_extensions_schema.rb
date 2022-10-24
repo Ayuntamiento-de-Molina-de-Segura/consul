@@ -1,5 +1,8 @@
 class CreateSharedExtensionsSchema < ActiveRecord::Migration[6.0]
   def up
+    # TODO: check the user can create schemas and, if not, add this to the errors:
+    # GRANT CREATE ON DATABASE consul_staging TO deploy;
+    # CREATE SCHEMA shared_extensions;
     create_schema(extensions_schema) unless schema_exists?(extensions_schema)
 
     %w[unaccent pg_trgm].each do |extension|
