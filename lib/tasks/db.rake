@@ -48,9 +48,12 @@ namespace :db do
     load Rails.root.join("db", "demo_seeds.rb")
   end
 
-  # TODO: replace with db:truncate_all when upgrading to Rails 6
+  # TODO: replace with db:truncate_all after we stop using specific IDs
+  # in the demo seeds files (for example, we're currently creating a
+  # comment with user_id: 3 which fails if we don't restart identity)
   desc "Removes all data from all tables and resets sequences"
   task truncate_all: :environment do
+    Tenant.destroy_all if Tenant.default?
     internal_tables = [
       ActiveRecord::Base.internal_metadata_table_name,
       ActiveRecord::Base.schema_migrations_table_name
