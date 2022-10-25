@@ -2,3 +2,60 @@
 //
 // You can also create SCSS files in the app/assets/stylesheets/custom/
 // folder and they will be loaded automatically.
+
+.wrapper > header {
+  border-bottom: 0 !important;
+}
+.top-bar {
+  background-color: $white !important;
+  .top-bar-title {
+    flex: 1;
+    @include breakpoint(small only) {
+      text-align: right;
+    }
+    a img {
+      max-width: 260px;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .top-bar-right {
+    li {
+      color: $black;
+      font-weight: 600;
+      .button {
+        color: $black !important;
+        background-color: $molina-yellow;
+      }
+    }
+  }
+  .menu-button {
+    color: $brand;
+  }
+}
+
+.subnavigation {
+  background: $molina-green;
+  @include breakpoint(small only) {
+    background-color: white;
+    a.is-active {
+      color: $brand !important;
+    }
+  }
+}
+
+.help-header {
+  background: $brand;
+  h1,
+  a {
+    color: $white;
+  }
+  img {
+    filter: invert(100%) sepia(0%) saturate(7499%) hue-rotate(77deg)
+      brightness(106%) contrast(150%);
+  }
+}
+
+.footer {
+  background-color: $molina-yellow;
+}
