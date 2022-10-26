@@ -6,6 +6,16 @@
 .wrapper > header {
   border-bottom: 0 !important;
 }
+
+.auth-page .wrapper .auth-image {
+  background: transparent;
+  border-right: 2px solid $brand;
+  @include breakpoint(small only) {
+    border-right: none;
+    border-bottom: 2px solid $brand;
+  }
+}
+
 .top-bar {
   background-color: $white !important;
   .top-bar-title {
