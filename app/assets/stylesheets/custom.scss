@@ -25,11 +25,20 @@
     }
     a img {
       max-width: 260px;
+      min-width: 220px;
       width: 100%;
       height: auto;
     }
   }
+  @include breakpoint(small only) {
+    #responsive-menu {
+      width: 100%;
+    }
+  }
   .top-bar-right {
+    @include breakpoint(small only) {
+      width: 100%;
+    }
     li {
       color: $black;
       font-weight: 600;
