@@ -30,7 +30,7 @@ es:
         go_to_index: Ver propuestas
         office: Verificarte presencialmente en cualquier Oficina de Atención al Ciudadano
         send_letter: Solicitar una carta por correo postal
-        title: '¡Felicidades!'
+        title: "¡Felicidades!"
         user_permission_info: Con tu cuenta ya puedes...
       update:
         flash:
@@ -58,7 +58,7 @@ es:
         error_not_allowed_postal_code: Los ciudadanos residentes en este código postal no pueden participar
         error_verifying_census: El Padrón no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos llamando al Ayuntamiento o visitando una Oficina de Atención al Ciudadano.
         form_errors: evitaron verificar tu residencia
-        postal_code_note: Para verificar tus datos debes estar empadronado
+        postal_code_note: Para verificar tus datos debes estar empadronado. Si tienes problemas para verificar tu cuenta prueba a usar el Código Postal 30500.
         terms: los términos de acceso
         title: Verificar residencia
         verify_residence: Verificar residencia
@@ -68,7 +68,7 @@ es:
           success: Introduce el código de confirmación que te hemos enviado por mensaje de texto
       edit:
         resend_sms_link: Solicitar un nuevo código
-        resend_sms_text: '¿No has recibido un mensaje de texto con tu código de confirmación?'
+        resend_sms_text: "¿No has recibido un mensaje de texto con tu código de confirmación?"
         submit_button: Enviar
         title: SMS de confirmación
       new:
