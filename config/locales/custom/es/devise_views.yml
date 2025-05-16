@@ -1,0 +1,6 @@
+es:
+  devise_views:
+    users:
+      registrations:
+        new:
+          phone_number: Teléfono
