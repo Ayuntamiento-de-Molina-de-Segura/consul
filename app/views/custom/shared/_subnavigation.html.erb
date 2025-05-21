@@ -62,6 +62,21 @@
       </li>
     <% end %>
 
+    <li>
+      <%= layout_menu_link_to t("layouts.header.concejalia"),
+                              "https://participacionciudadana.molinadesegura.es/",
+                              false,
+                              accesskey: "8",
+                              target: "_blank" %>
+    </li>
+
+    <li>
+      <%= layout_menu_link_to t("layouts.header.faq"),
+                              '/faq',
+                              current_page?('/faq'),
+                              accesskey: "9" %>
+    </li>
+
     <%= raw content_block("subnavigation_right") %>
   </ul>
 </nav>
