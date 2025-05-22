@@ -2,4 +2,22 @@ es:
   layouts:
     header:
       faq: Ayuda
-      concejalia: Consejalia de Participación
+      concejalia: Concejalia de Participación
+  budgets:
+    investments:
+      zones:
+        zona_1: >
+          ZONA 1 • Oeste.
+          Fátima, Punta del Lugar, Sta.Bárbara, Ciudad Parque, BoCentro, El Castillo, San Roque, Santa Rita, La Ermita.
+        zona_2: >
+          ZONA 2 • Este.
+          El Panderón, San José Los Ángeles, San Antonio, San Miguel, Sagrado, Corazón, El Carmen, Casa Ros, La Molineta, Los Vientos.
+        zona_3: >
+          ZONA 3 • Urbanizaciones.
+          El Chorrico, La Alcayna, Altorreal, Montepríncipe, los Conejos I y II, La Quinta, Los Olivos, El Pino, El Romeral, Finca Maximino.
+        zona_4: >
+          ZONA 4 • Pedanías del Campo, Los Valientes, El Fenazar, La Hornera, Comala, La Hurona, La Espada, La Albarda, El Romeral, El Rellano, Campotéjar Alta y Baja.
+        zona_5: >
+          ZONA 5 • Pedanías de la Huerta, El Llano, Torrealta, La Brancha,La Ribera, Mirador de Agridulce.
+      form:
+        zone: Zona

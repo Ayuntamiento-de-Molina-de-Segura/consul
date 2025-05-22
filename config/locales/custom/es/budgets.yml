@@ -1,0 +1,5 @@
+es:
+  budgets:
+    investments:
+      show:
+        zone: "%{zone}"
