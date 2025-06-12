@@ -4,3 +4,4 @@ es:
       index:
         list:
           description: "Descripción"
+          zone: "Zona"
