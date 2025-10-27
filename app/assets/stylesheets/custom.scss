@@ -8,6 +8,7 @@
 }
 
 .auth-page .wrapper .auth-image {
+  background-image: none !important;
   background: transparent;
   border-right: 2px solid $brand;
   @include breakpoint(small only) {
@@ -61,7 +62,7 @@
       width: 100%;
     }
   }
-  .top-bar-right {
+  .account-menu {
     @include breakpoint(small only) {
       width: 100%;
     }
@@ -80,6 +81,7 @@
 }
 
 .subnavigation {
+  @include background-with-text-contrast($subnavigation, subnavigation);
   background: $molina-green;
   @include breakpoint(small only) {
     background-color: white;
