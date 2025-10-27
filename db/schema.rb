@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2025_05_22_081113) do
-
+ActiveRecord::Schema[7.0].define(version: 2025_05_22_081113) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
   enable_extension "plpgsql"
@@ -49,7 +48,7 @@ ActiveRecord::Schema.define(version: 2025_05_22_081113) do
     t.text "metadata"
     t.bigint "byte_size", null: false
     t.string "checksum"
-    t.datetime "created_at", null: false
+    t.datetime "created_at", precision: nil, null: false
     t.string "service_name", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
@@ -95,19 +94,6 @@ ActiveRecord::Schema.define(version: 2025_05_22_081113) do
     t.integer "user_id"
     t.string "description"
     t.index ["user_id"], name: "index_administrators_on_user_id"
-  end
-
-  create_table "ahoy_events", id: :uuid, default: nil, force: :cascade do |t|
-    t.uuid "visit_id"
-    t.integer "user_id"
-    t.string "name"
-    t.jsonb "properties"
-    t.datetime "time", precision: nil
-    t.string "ip"
-    t.index ["name", "time"], name: "index_ahoy_events_on_name_and_time"
-    t.index ["time"], name: "index_ahoy_events_on_time"
-    t.index ["user_id"], name: "index_ahoy_events_on_user_id"
-    t.index ["visit_id"], name: "index_ahoy_events_on_visit_id"
   end
 
   create_table "audits", id: :serial, force: :cascade do |t|
@@ -407,13 +393,6 @@ ActiveRecord::Schema.define(version: 2025_05_22_081113) do
     t.boolean "hide_money", default: false
   end
 
-  create_table "campaigns", id: :serial, force: :cascade do |t|
-    t.string "name"
-    t.string "track_id"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
-  end
-
   create_table "ckeditor_assets", id: :serial, force: :cascade do |t|
     t.string "data_file_name", null: false
     t.string "data_content_type"
@@ -481,8 +460,8 @@ ActiveRecord::Schema.define(version: 2025_05_22_081113) do
     t.text "description"
     t.string "cookie"
     t.text "script"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["cookie"], name: "index_cookies_vendors_on_cookie", unique: true
   end
 
@@ -538,9 +517,9 @@ ActiveRecord::Schema.define(version: 2025_05_22_081113) do
 
   create_table "debates", id: :serial, force: :cascade do |t|
     t.integer "author_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.datetime "hidden_at"
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
+    t.datetime "hidden_at", precision: nil
     t.integer "flags_count", default: 0
     t.datetime "ignored_flag_at", precision: nil
     t.integer "cached_votes_total", default: 0
@@ -1034,8 +1013,8 @@ ActiveRecord::Schema.define(version: 2025_05_22_081113) do
     t.integer "question_id"
     t.integer "author_id"
     t.string "answer"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
     t.bigint "option_id"
     t.index ["author_id"], name: "index_poll_answers_on_author_id"
     t.index ["option_id", "author_id"], name: "index_poll_answers_on_option_id_and_author_id", unique: true
@@ -1160,7 +1139,6 @@ ActiveRecord::Schema.define(version: 2025_05_22_081113) do
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
     t.tsvector "tsv"
-    t.string "video_url"
     t.index ["author_id"], name: "index_poll_questions_on_author_id"
     t.index ["poll_id"], name: "index_poll_questions_on_poll_id"
     t.index ["proposal_id"], name: "index_poll_questions_on_proposal_id"
@@ -1527,8 +1505,6 @@ ActiveRecord::Schema.define(version: 2025_05_22_081113) do
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.string "locale"
-    t.boolean "is_news", default: false
-    t.datetime "news_date"
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
@@ -1636,7 +1612,6 @@ ActiveRecord::Schema.define(version: 2025_05_22_081113) do
     t.string "locale"
     t.string "oauth_email"
     t.integer "geozone_id"
-    t.string "redeemable_code"
     t.string "gender", limit: 10
     t.datetime "date_of_birth", precision: nil
     t.boolean "email_digest", default: true
@@ -1700,7 +1675,6 @@ ActiveRecord::Schema.define(version: 2025_05_22_081113) do
     t.text "landing_page"
     t.integer "user_id"
     t.string "referring_domain"
-    t.string "search_keyword"
     t.string "browser"
     t.string "os"
     t.string "device_type"
@@ -1718,9 +1692,13 @@ ActiveRecord::Schema.define(version: 2025_05_22_081113) do
     t.string "utm_content"
     t.string "utm_campaign"
     t.datetime "started_at", precision: nil
+    t.string "visit_token"
+    t.string "visitor_token"
     t.index ["started_at"], name: "index_visits_on_started_at"
     t.index ["user_id"], name: "index_visits_on_user_id"
+    t.index ["visit_token"], name: "index_visits_on_visit_token", unique: true
     t.index ["visitor_id", "started_at"], name: "index_visits_on_visitor_id_and_started_at"
+    t.index ["visitor_token", "started_at"], name: "index_visits_on_visitor_token_and_started_at"
   end
 
   create_table "votation_types", force: :cascade do |t|
