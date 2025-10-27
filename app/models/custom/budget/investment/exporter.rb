@@ -1,4 +1,4 @@
-require_dependency Rails.root.join('app', 'models', 'budget', 'investment', 'exporter').to_s
+load Rails.root.join('app', 'models', 'budget', 'investment', 'exporter.rb')
 
 class Budget::Investment::Exporter
     require "csv"

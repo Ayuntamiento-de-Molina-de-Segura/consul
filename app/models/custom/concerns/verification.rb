@@ -1,4 +1,4 @@
-require_dependency Rails.root.join('app', 'models', 'concerns', 'verification').to_s
+load Rails.root.join('app', 'models', 'concerns', 'verification.rb')
 
 module Verification
   extend ActiveSupport::Concern
