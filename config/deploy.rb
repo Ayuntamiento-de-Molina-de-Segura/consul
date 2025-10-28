@@ -13,7 +13,7 @@ def main_deploy_server
     deploysecret(:server)
   end
 end
-
+set :pty, false
 set :rails_env, fetch(:stage)
 set :default_env, { EXECJS_RUNTIME: "Disabled" }
 set :rvm1_map_bins, -> { fetch(:rvm_map_bins).to_a.concat(%w[rake gem bundle ruby]).uniq }
