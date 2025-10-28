@@ -1,4 +1,10 @@
 set :branch, ENV["branch"] || :main
+set :ssh_options, {
+  forward_agent: true,
+  keepalive: true,
+  keepalive_interval: 60,
+  timeout: 300
+}
 
 server main_deploy_server, user: deploysecret(:user), roles: %w[web app db importer cron background]
 #server deploysecret(:server2), user: deploysecret(:user), roles: %w(web app db importer cron background)
