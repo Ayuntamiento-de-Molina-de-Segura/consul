@@ -57,10 +57,12 @@
               <%= @budget.formatted_amount(investment.price) %>
             </td>
             <% if results_type == :compatible %>
+              <% safe_amount_available = amount_available || 0 %>
+              <% safe_price = investment.price || 0 %>
               <td class="small text-right"
-                  title="<%= @budget.formatted_amount(amount_available) %> - <%= @budget.formatted_amount(investment.price) %>">
-                <%= @budget.formatted_amount(amount_available - investment.price) %>
-                <% amount_available -= investment.price if investment.winner? %>
+                  title="<%= @budget.formatted_amount(safe_amount_available) %> - <%= @budget.formatted_amount(safe_price) %>">
+                <%= @budget.formatted_amount(safe_amount_available - safe_price) %>
+                <% safe_amount_available -= safe_price if investment.winner? %>
               </td>
             <% end %>
           <% end %>
